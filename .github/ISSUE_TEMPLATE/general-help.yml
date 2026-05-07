@@ -1,0 +1,45 @@
+name: General Help
+description: Need help with server permissions, roles, account access, or anything else? Open one here.
+labels: ["general-help"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No worries — we're here to help. Tell us what you need and we'll get back to you.
+
+  - type: textarea
+    id: help_needed
+    attributes:
+      label: What do you need help with?
+      description: Explain your situation as clearly as you can.
+      placeholder: "e.g. I lost my Trusted role after rejoining the Discord and can't access the server channels"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: How urgent is this?
+      options:
+        - Low - No rush, when you get a chance
+        - Medium - Affecting my experience but I can wait
+        - High - I can't do anything until this is fixed
+    validations:
+      required: true
+
+  - type: input
+    id: discord
+    attributes:
+      label: Your Discord username
+      description: So we know who to help and can DM you if needed.
+      placeholder: "e.g. stickman112"
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else we should know?
+      description: Screenshots, extra context, related issues — anything helps.
+    validations:
+      required: false

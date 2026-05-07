@@ -1,0 +1,42 @@
+name: Feature Request
+description: Have an idea to improve the server or community? Suggest it here.
+labels: ["feature-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        We love hearing ideas from the community. Describe what you have in mind and why it would make things better.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What's your idea?
+      description: Describe the feature or change you'd like to see.
+      placeholder: "e.g. Add a /home command so players can set a personal spawn point"
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: Why would this help the community?
+      description: Who benefits and how? The more context, the better.
+      placeholder: "e.g. New players keep getting lost and this would help them feel less overwhelmed"
+    validations:
+      required: true
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Examples from other servers, links, mockups - whatever helps explain it.
+    validations:
+      required: false
+
+  - type: input
+    id: discord
+    attributes:
+      label: Your Discord username
+      placeholder: "e.g. stickman112"
+    validations:
+      required: true

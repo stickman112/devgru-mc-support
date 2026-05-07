@@ -1,0 +1,41 @@
+name: Auto Label Issues
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Apply label based on template
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = context.payload.issue.body || '';
+            const title = context.payload.issue.title || '';
+            const labels = context.payload.issue.labels.map(l => l.name);
+
+            // Labels are already applied by the template's `labels` field,
+            // but this step adds `triage` to every new issue as a default.
+            if (!labels.includes('triage')) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.payload.issue.number,
+                labels: ['triage']
+              });
+            }
+
+      - name: Post welcome comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.payload.issue.number,
+              body: `Thanks for submitting a ticket! A DEVGRU MC admin will review this soon.\n\nIn the meantime:\n- For urgent issues, ping an admin in Discord\n- If you have more details to add, just reply to this thread\n\nYour ticket is now in the **Triage** queue.`
+            });

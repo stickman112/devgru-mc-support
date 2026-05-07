@@ -1,0 +1,24 @@
+name: Stale Ticket Cleanup
+
+on:
+  schedule:
+    - cron: '0 9 * * *'  # runs daily at 9am UTC
+  workflow_dispatch:
+
+jobs:
+  stale:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - uses: actions/stale@v9
+        with:
+          stale-issue-message: |
+            Hey! This ticket hasn't had any activity in 7 days. If you still need help, just reply here and we'll pick it back up. Otherwise it will be automatically closed in 7 more days.
+          close-issue-message: |
+            This ticket has been closed due to inactivity. If you still need help, feel free to open a new ticket. Thanks for reaching out!
+          days-before-stale: 7
+          days-before-close: 7
+          stale-issue-label: stale
+          exempt-issue-labels: in-progress,waiting-on-user,backlog,pinned
+          operations-per-run: 100

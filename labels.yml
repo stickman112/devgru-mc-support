@@ -1,0 +1,48 @@
+# Label definitions for devgru-mc-support
+# Apply these via the GitHub CLI:
+#   gh label create "label-name" --color "HEXCODE" --description "description" --repo stickman112/devgru-mc-support
+
+labels:
+  - name: game-server
+    color: "0075ca"
+    description: Issue related to one of our hosted game servers
+
+  - name: general-help
+    color: "e4e669"
+    description: General support request (permissions, roles, access)
+
+  - name: bug
+    color: "d73a4a"
+    description: Something is broken or behaving unexpectedly
+
+  - name: feature-request
+    color: "a2eeef"
+    description: Suggestion or idea for improving the server or community
+
+  - name: urgent
+    color: "b60205"
+    description: Needs immediate admin attention
+
+  - name: triage
+    color: "fbca04"
+    description: Newly opened, not yet reviewed by an admin
+
+  - name: in-progress
+    color: "0e8a16"
+    description: An admin is actively working on this
+
+  - name: waiting-on-user
+    color: "e99695"
+    description: Waiting for more info or a response from the ticket opener
+
+  - name: backlog
+    color: "c5def5"
+    description: Acknowledged and valid, but not yet being actively worked
+
+  - name: resolved
+    color: "6f42c1"
+    description: Issue has been resolved and closed
+
+  - name: stale
+    color: "ededed"
+    description: No activity for 7+ days, pending auto-close

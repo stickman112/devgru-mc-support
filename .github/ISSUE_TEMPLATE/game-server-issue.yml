@@ -1,0 +1,60 @@
+name: Game Server Issue
+description: Report a problem with one of our hosted game servers (lag, crashes, connection issues, etc.)
+labels: ["game-server"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a game server issue! Fill out as much as you can so we can track it down faster.
+
+  - type: dropdown
+    id: server
+    attributes:
+      label: Which game server?
+      description: Select the server you're having trouble with.
+      options:
+        - Minecraft - Survival
+        - Minecraft - Creative
+        - Minecraft - SMP
+        - Other (describe below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What's happening?
+      description: Describe the issue as clearly as you can.
+      placeholder: "e.g. I keep getting kicked every 5 minutes with a timeout error"
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Walk us through what you were doing when it happened.
+      placeholder: |
+        1. Joined the server
+        2. Started mining in the nether
+        3. Lagged out and couldn't reconnect
+    validations:
+      required: false
+
+  - type: input
+    id: when
+    attributes:
+      label: When did this start?
+      description: Approximate date/time is fine.
+      placeholder: "e.g. Yesterday around 8pm EST"
+    validations:
+      required: false
+
+  - type: input
+    id: discord
+    attributes:
+      label: Your Discord username
+      description: So we can follow up with you directly.
+      placeholder: "e.g. stickman112"
+    validations:
+      required: true
