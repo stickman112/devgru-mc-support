@@ -13,9 +13,7 @@ body:
       label: Which game server?
       description: Select the server you're having trouble with.
       options:
-        - Minecraft - Survival
-        - Minecraft - Creative
-        - Minecraft - SMP
+        - Minecraft - DevWorld
         - Other (describe below)
     validations:
       required: true
